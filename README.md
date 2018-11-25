@@ -2,7 +2,7 @@
 
 | master  | dev |
 | ------------- | ------------- |
-| [![Build Status](https://travis-ci.com/larromba/testextensions.svg?branch=master)](https://travis-ci.com/larromba/testextensions) | [![Build Status](https://travis-ci.com/larromba/TestExtensions.svg?branch=dev)](https://travis-ci.com/larromba/TestExtensions) |
+| [![Build Status](https://travis-ci.com/larromba/TestExtensions.svg?branch=master)](https://travis-ci.com/larromba/testextensions) | [![Build Status](https://travis-ci.com/larromba/TestExtensions.svg?branch=dev)](https://travis-ci.com/larromba/testextensions) |
 
 ## About
 Testing extensions for macOS / iOS
