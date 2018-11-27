@@ -11,10 +11,10 @@
 		7FAD2BA821AAF0BE00F0E0A7 /* TestExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD2BA721AAF0BE00F0E0A7 /* TestExtensionsTests.swift */; };
 		7FAD2BAA21AAF0BE00F0E0A7 /* TestExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FAD2B9C21AAF0BE00F0E0A7 /* TestExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FAD2BB421AAF0C700F0E0A7 /* XCTestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD2BB321AAF0C700F0E0A7 /* XCTestExtensions.swift */; };
-		7FEE9DE121ADF0280093507F /* TestExtensionsTests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE9DE021ADF0280093507F /* TestExtensionsTests_iOS.swift */; };
 		7FEE9DE921ADF03C0093507F /* TestExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD2B9921AAF0BE00F0E0A7 /* TestExtensions.framework */; };
-		7FEE9DF121ADF04B0093507F /* TestExtensionsTests_tvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE9DF021ADF04B0093507F /* TestExtensionsTests_tvOS.swift */; };
 		7FEE9DF821ADF0550093507F /* TestExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FAD2B9921AAF0BE00F0E0A7 /* TestExtensions.framework */; };
+		7FEE9DFB21ADFAD60093507F /* TestExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD2BA721AAF0BE00F0E0A7 /* TestExtensionsTests.swift */; };
+		7FEE9DFC21ADFAD60093507F /* TestExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAD2BA721AAF0BE00F0E0A7 /* TestExtensionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,10 +51,8 @@
 		7FAD2BB321AAF0C700F0E0A7 /* XCTestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestExtensions.swift; sourceTree = "<group>"; };
 		7FAD2BB721AAF47800F0E0A7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7FEE9DDE21ADF0280093507F /* TestExtensionsTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TestExtensionsTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FEE9DE021ADF0280093507F /* TestExtensionsTests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensionsTests_iOS.swift; sourceTree = "<group>"; };
 		7FEE9DE221ADF0280093507F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FEE9DEE21ADF04B0093507F /* TestExtensionsTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TestExtensionsTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7FEE9DF021ADF04B0093507F /* TestExtensionsTests_tvOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtensionsTests_tvOS.swift; sourceTree = "<group>"; };
 		7FEE9DF221ADF04B0093507F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +137,6 @@
 		7FEE9DDF21ADF0280093507F /* TestExtensionsTests-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				7FEE9DE021ADF0280093507F /* TestExtensionsTests_iOS.swift */,
 				7FEE9DE221ADF0280093507F /* Info.plist */,
 			);
 			path = "TestExtensionsTests-iOS";
@@ -155,7 +152,6 @@
 		7FEE9DEF21ADF04B0093507F /* TestExtensionsTests-tvOS */ = {
 			isa = PBXGroup;
 			children = (
-				7FEE9DF021ADF04B0093507F /* TestExtensionsTests_tvOS.swift */,
 				7FEE9DF221ADF04B0093507F /* Info.plist */,
 			);
 			path = "TestExtensionsTests-tvOS";
@@ -372,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FEE9DE121ADF0280093507F /* TestExtensionsTests_iOS.swift in Sources */,
+				7FEE9DFB21ADFAD60093507F /* TestExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FEE9DF121ADF04B0093507F /* TestExtensionsTests_tvOS.swift in Sources */,
+				7FEE9DFC21ADFAD60093507F /* TestExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +534,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = TestExtensions/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -550,9 +550,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.larromba.TestExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos appletvos appletvsimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos appletvos appletvsimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -568,7 +569,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(PLATFORM_DIR)/Developer/Library/Frameworks\"",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = TestExtensions/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -580,8 +585,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.larromba.TestExtensions;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos appletvos appletvsimulator watchos watchsimulator";
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos appletvos appletvsimulator";
 				SWIFT_VERSION = 4.2;
+				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;
 		};
