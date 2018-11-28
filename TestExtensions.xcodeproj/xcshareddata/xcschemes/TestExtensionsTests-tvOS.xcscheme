@@ -16,9 +16,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F7FCF7121AE959400C4B1FF"
-               BuildableName = "TestExtensionsTests-macOS.xctest"
-               BlueprintName = "TestExtensionsTests-macOS"
+               BlueprintIdentifier = "7F7FCFAA21AEACD300C4B1FF"
+               BuildableName = "TestsExtensionsTests-tvOS.xctest"
+               BlueprintName = "TestsExtensionsTests-tvOS"
                ReferencedContainer = "container:TestExtensions.xcodeproj">
             </BuildableReference>
          </TestableReference>
