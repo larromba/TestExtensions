@@ -53,6 +53,7 @@
 		7F7FCFA321AEACBD00C4B1FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F7FCFAB21AEACD300C4B1FF /* TestsExtensionsTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TestsExtensionsTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7FCFAF21AEACD300C4B1FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F8FA6E821AEC98A00A93E97 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 		7F7FCF5F21AE959400C4B1FF = {
 			isa = PBXGroup;
 			children = (
+				7F8FA6E821AEC98A00A93E97 /* README.md */,
 				7F7FCF6B21AE959400C4B1FF /* TestExtensions */,
 				7F7FCF9A21AEAC6C00C4B1FF /* TestExtensionsTests */,
 				7F7FCF7621AE959400C4B1FF /* TestExtensionsTests-macOS */,
