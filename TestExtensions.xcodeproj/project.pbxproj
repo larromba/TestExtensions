@@ -521,7 +521,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = TestExtensions/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -535,7 +535,7 @@
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos appletvos appletvsimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TVOS_DEPLOYMENT_TARGET = 11.1;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
@@ -560,7 +560,7 @@
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = TestExtensions/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -573,7 +573,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos appletvos appletvsimulator";
 				SWIFT_VERSION = 4.2;
-				TVOS_DEPLOYMENT_TARGET = 11.1;
+				TVOS_DEPLOYMENT_TARGET = 11.0;
 				VALID_ARCHS = "i386 x86_64 arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
