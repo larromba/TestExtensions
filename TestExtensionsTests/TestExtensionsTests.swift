@@ -1,7 +1,7 @@
 @testable import TestExtensions
 import XCTest
 
-class TestExtensionsTests: XCTestCase {
+final class TestExtensionsTests: XCTestCase {
     func testWait() {
         let expectation = self.expectation(description: "wait callback invoked")
         wait(for: 1.0) {

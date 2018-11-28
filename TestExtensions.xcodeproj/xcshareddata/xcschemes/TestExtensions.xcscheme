@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FAD2B9821AAF0BE00F0E0A7"
+               BlueprintIdentifier = "7F7FCF6821AE959400C4B1FF"
                BuildableName = "TestExtensions.framework"
                BlueprintName = "TestExtensions"
                ReferencedContainer = "container:TestExtensions.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FAD2BA121AAF0BE00F0E0A7"
+               BlueprintIdentifier = "7F7FCF7121AE959400C4B1FF"
                BuildableName = "TestExtensionsTests-macOS.xctest"
                BlueprintName = "TestExtensionsTests-macOS"
                ReferencedContainer = "container:TestExtensions.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FAD2B9821AAF0BE00F0E0A7"
+            BlueprintIdentifier = "7F7FCF6821AE959400C4B1FF"
             BuildableName = "TestExtensions.framework"
             BlueprintName = "TestExtensions"
             ReferencedContainer = "container:TestExtensions.xcodeproj">
@@ -64,7 +64,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FAD2B9821AAF0BE00F0E0A7"
+            BlueprintIdentifier = "7F7FCF6821AE959400C4B1FF"
             BuildableName = "TestExtensions.framework"
             BlueprintName = "TestExtensions"
             ReferencedContainer = "container:TestExtensions.xcodeproj">
@@ -82,7 +82,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FAD2B9821AAF0BE00F0E0A7"
+            BlueprintIdentifier = "7F7FCF6821AE959400C4B1FF"
             BuildableName = "TestExtensions.framework"
             BlueprintName = "TestExtensions"
             ReferencedContainer = "container:TestExtensions.xcodeproj">
