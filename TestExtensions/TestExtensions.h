@@ -1,10 +1,3 @@
-//
-//  TestExtensions.h
-//  TestExtensions
-//
-//  Created by Lee Arromba on 28/11/2018.
-//
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for TestExtensions.
