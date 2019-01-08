@@ -16,7 +16,9 @@ public extension XCTestCase {
         let waitExpectation = expectation(description: "completion handler should be called to fulfil expectation")
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             completionWithHandler {
-                waitExpectation.fulfill()
+                DispatchQueue.main.async {
+                    waitExpectation.fulfill()
+                }
             }
         }
         waitForExpectations(timeout: duration + 1.0) // +1.0 for CI
