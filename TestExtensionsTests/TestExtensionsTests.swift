@@ -17,7 +17,9 @@ final class TestExtensionsTests: XCTestCase {
         wait(for: 1.0) { completion in
             XCTAssertGreaterThanOrEqual(Date().timeIntervalSince(date), 1.0)
             expectation.fulfill()
-            completion()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { // simulate another async task
+                completion()
+            })
         }
     }
 }
