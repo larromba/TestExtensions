@@ -12,7 +12,7 @@ public extension XCTestCase {
         waitForExpectations(timeout: duration + 1.0) // +1.0 for CI
     }
 
-    func wait(for duration: TimeInterval = 0.5, completionWithHandler: @escaping ((() -> Void) -> Void)) {
+    func wait(for duration: TimeInterval = 0.5, completionWithHandler: @escaping ((@escaping () -> Void) -> Void)) {
         let waitExpectation = expectation(description: "completion handler should be called to fulfil expectation")
         DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
             completionWithHandler {
