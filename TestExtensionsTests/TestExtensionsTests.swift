@@ -57,7 +57,7 @@ final class TestExtensionsTests: XCTestCase {
         XCTAssertLessThanOrEqual(timeElapsed, 1.0)
     }
 
-    func testMultipleWaitAsync() {
+    func testWaitAsyncMultiple() {
         // 1.
         // sut
         waitAsync(for: 1.0) { completion in
@@ -81,5 +81,29 @@ final class TestExtensionsTests: XCTestCase {
         // tests
         XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
         XCTAssertLessThanOrEqual(timeElapsed, 1.5)
+    }
+
+    func testWaitAsyncDelay() {
+        // 1.
+        // sut
+        waitAsync(for: 1.0, delay: 1.0) { completion in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                completion()
+            }
+        }
+
+        // tests
+        XCTAssertGreaterThanOrEqual(timeElapsed, 1.5)
+        XCTAssertLessThanOrEqual(timeElapsed, 2.0)
+    }
+
+    func testWaitAsyncQueue() {
+        // 1.
+        // sut
+        waitAsync(for: 1.0, queue: .global()) { completion in
+            // tests
+            XCTAssertFalse(Thread.isMainThread)
+            completion()
+        }
     }
 }
