@@ -1,7 +1,7 @@
 @testable import TestExtensions
 import XCTest
 
-final class TestExtensionsTests: XCTestCase {
+final class XCTestCaseExtensionsTests: XCTestCase {
     private var startDate: Date!
     private var timeElapsed: TimeInterval {
         return Date().timeIntervalSince(startDate)
