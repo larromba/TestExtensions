@@ -2,24 +2,84 @@
 import XCTest
 
 final class TestExtensionsTests: XCTestCase {
-    func testWaitAutomaticCompletion() {
-        let expectation = self.expectation(description: "wait callback invoked")
-        let date = Date()
-        wait(for: 1.0) {
-            XCTAssertGreaterThanOrEqual(Date().timeIntervalSince(date), 1.0)
-            expectation.fulfill()
-        }
+    private var startDate: Date!
+    private var timeElapsed: TimeInterval {
+        return Date().timeIntervalSince(startDate)
     }
 
-    func testWaitManualCompletion() {
-        let expectation = self.expectation(description: "wait callback invoked")
-        let date = Date()
-        wait(for: 1.0) { completion in
-            XCTAssertGreaterThanOrEqual(Date().timeIntervalSince(date), 1.0)
-            expectation.fulfill()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: { // simulate another async task
+    override func setUp() {
+        super.setUp()
+        startDate = Date()
+    }
+
+    override func tearDown() {
+        startDate = nil
+        super.tearDown()
+    }
+
+    func testWaitSync() {
+        // sut
+        waitSync(for: 1.0)
+
+        // tests
+        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 5.0)
+    }
+
+    func testWaitSyncMultiple() {
+        // 1.
+        // sut
+        waitSync(for: 1.0)
+
+        // tests
+        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 5.0)
+
+        // 2.
+        // sut
+        waitSync(for: 1.0)
+
+        // tests
+        XCTAssertGreaterThanOrEqual(timeElapsed, 2.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 6.0)
+    }
+
+    func testWaitAsync() {
+        // sut
+        waitAsync(for: 1.0) { completion in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 completion()
-            })
+            }
         }
+
+        // tests
+        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 5.0)
+    }
+
+    func testMultipleWaitAsync() {
+        // 1.
+        // sut
+        waitAsync(for: 1.0) { completion in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                completion()
+            }
+        }
+        
+        // tests
+        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 5.0)
+
+        // 2.
+        // sut
+        waitAsync(for: 1.0) { completion in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                completion()
+            }
+        }
+
+        // tests
+        XCTAssertGreaterThanOrEqual(timeElapsed, 2.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 6.0)
     }
 }
