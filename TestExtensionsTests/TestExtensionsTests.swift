@@ -23,7 +23,7 @@ final class TestExtensionsTests: XCTestCase {
 
         // tests
         XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 5.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 2.0)
     }
 
     func testWaitSyncMultiple() {
@@ -33,7 +33,7 @@ final class TestExtensionsTests: XCTestCase {
 
         // tests
         XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 5.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 2.0)
 
         // 2.
         // sut
@@ -41,7 +41,7 @@ final class TestExtensionsTests: XCTestCase {
 
         // tests
         XCTAssertGreaterThanOrEqual(timeElapsed, 2.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 6.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 3.0)
     }
 
     func testWaitAsync() {
@@ -53,8 +53,8 @@ final class TestExtensionsTests: XCTestCase {
         }
 
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 5.0)
+        XCTAssertGreaterThanOrEqual(timeElapsed, 0.5)
+        XCTAssertLessThanOrEqual(timeElapsed, 1.0)
     }
 
     func testMultipleWaitAsync() {
@@ -67,8 +67,8 @@ final class TestExtensionsTests: XCTestCase {
         }
         
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 5.0)
+        XCTAssertGreaterThanOrEqual(timeElapsed, 0.5)
+        XCTAssertLessThanOrEqual(timeElapsed, 1.0)
 
         // 2.
         // sut
@@ -79,7 +79,7 @@ final class TestExtensionsTests: XCTestCase {
         }
 
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 2.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 6.0)
+        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
+        XCTAssertLessThanOrEqual(timeElapsed, 1.5)
     }
 }
