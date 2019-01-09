@@ -11,11 +11,14 @@ public extension XCTestCase {
         waitForExpectations(timeout: duration + 1.0) // +1.0 for CI
     }
 
-    func waitAsync(for duration: TimeInterval = 0.5, completion: @escaping (@escaping () -> Void) -> Void) {
+    func waitAsync(for duration: TimeInterval = 0.5, delay: TimeInterval = 0.0, queue: DispatchQueue = .main,
+                   completion: @escaping (@escaping () -> Void) -> Void) {
         let expectation = self.expectation(description: "wait asynchronously for callback")
-        completion {
-            DispatchQueue.main.async { expectation.fulfill() }
+        queue.asyncAfter(deadline: .now() + delay) {
+            completion {
+                DispatchQueue.main.async { expectation.fulfill() }
+            }
         }
-        waitForExpectations(timeout: duration)
+        waitForExpectations(timeout: delay + duration)
     }
 }
