@@ -17,90 +17,108 @@ final class XCTestCaseExtensionsTests: XCTestCase {
         super.tearDown()
     }
 
-    func testWaitSync() {
+    // MARK: - waitSync
+
+    func test_waitSync_whenInvokedWithDuration_expectCorrectDuration() {
+        // mocks
+        let duration = 1.0
+
         // sut
-        waitSync(for: 1.0)
+        waitSync(for: duration)
 
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 2.0)
+        XCTAssertEqual(timeElapsed, duration, accuracy: 0.2)
     }
 
-    func testWaitSyncMultiple() {
+    func test_waitSync_whenInvokedWithDurationMultipleTimes_expectCorrectDuration() {
         // 1.
+        // mocks
+        let duration = 1.0
+
         // sut
-        waitSync(for: 1.0)
+        waitSync(for: duration)
 
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 2.0)
+        XCTAssertEqual(timeElapsed, duration, accuracy: 0.2)
 
         // 2.
+        // mocks
+        startDate = Date()
+
         // sut
-        waitSync(for: 1.0)
+        waitSync(for: duration)
 
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 2.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 3.0)
+        XCTAssertEqual(timeElapsed, duration, accuracy: 0.2)
     }
 
-    func testWaitAsync() {
+    // MARK: - waitAsync
+
+    func test_waitAsync_whenInvokedWithCompletion_expectCorrectDuration() {
+        // mocks
+        let asyncDuration = 0.2
+
         // sut
-        waitAsync(for: 1.0) { completion in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        waitAsync { completion in
+            DispatchQueue.main.asyncAfter(deadline: .now() + asyncDuration) {
                 completion()
             }
         }
 
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 0.5)
-        XCTAssertLessThanOrEqual(timeElapsed, 1.0)
+        XCTAssertEqual(timeElapsed, asyncDuration, accuracy: 0.2)
     }
 
-    func testWaitAsyncMultiple() {
+    func test_waitAsync_whenInvokedWithCompletionMultipleTimes_expectCorrectDuration() {
         // 1.
+        // mocks
+        let asyncDuration = 0.2
+
         // sut
-        waitAsync(for: 1.0) { completion in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        waitAsync { completion in
+            DispatchQueue.main.asyncAfter(deadline: .now() + asyncDuration) {
                 completion()
             }
         }
         
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 0.5)
-        XCTAssertLessThanOrEqual(timeElapsed, 1.0)
+        XCTAssertEqual(timeElapsed, asyncDuration, accuracy: 0.2)
 
         // 2.
+        // mocks
+        startDate = Date()
+
         // sut
-        waitAsync(for: 1.0) { completion in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        waitAsync { completion in
+            DispatchQueue.main.asyncAfter(deadline: .now() + asyncDuration) {
                 completion()
             }
         }
 
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 1.0)
-        XCTAssertLessThanOrEqual(timeElapsed, 1.5)
+        XCTAssertEqual(timeElapsed, asyncDuration, accuracy: 0.2)
     }
 
-    func testWaitAsyncDelay() {
-        // 1.
+    func test_waitAsync_whenInvokedWithDelay_expectCorrectDuration() {
+        // mocks
+        let delay = 0.5
+        let asyncDuration = 0.2
+
         // sut
-        waitAsync(for: 1.0, delay: 1.0) { completion in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        waitAsync(delay: delay) { completion in
+            DispatchQueue.main.asyncAfter(deadline: .now() + asyncDuration) {
                 completion()
             }
         }
 
         // tests
-        XCTAssertGreaterThanOrEqual(timeElapsed, 1.5)
-        XCTAssertLessThanOrEqual(timeElapsed, 2.0)
+        XCTAssertEqual(timeElapsed, (delay + asyncDuration), accuracy: 0.2)
     }
 
-    func testWaitAsyncQueue() {
+    func test_waitAsync_whenInvokedOnBackgroundQueue_expectThreadNotOnMain() {
         // 1.
         // sut
-        waitAsync(for: 1.0, queue: .global()) { completion in
+        waitAsync(queue: .global()) { completion in
             // tests
             XCTAssertFalse(Thread.isMainThread)
             completion()
