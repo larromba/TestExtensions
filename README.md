@@ -5,7 +5,7 @@
 | [![Build Status](https://travis-ci.com/larromba/TestExtensions.svg?branch=master)](https://travis-ci.com/larromba/testextensions) | [![Build Status](https://travis-ci.com/larromba/TestExtensions.svg?branch=dev)](https://travis-ci.com/larromba/testextensions) |
 
 ## About
-Testing extensions for macOS / iOS
+Testing extensions for macOS / iOS.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Testing extensions for macOS / iOS
 
 ```
 // Cartfile
-github "larromba/testextensions" ~> 1.0
+github "larromba/testextensions" ~> 2.0
 ```
 
 ```

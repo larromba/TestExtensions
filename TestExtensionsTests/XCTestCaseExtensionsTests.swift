@@ -80,7 +80,7 @@ final class XCTestCaseExtensionsTests: XCTestCase {
                 completion()
             }
         }
-        
+
         // tests
         XCTAssertEqual(timeElapsed, asyncDuration, accuracy: 0.2)
 
