@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F0F97A924B8E16F007FE1BA /* ObjC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0F97A824B8E16F007FE1BA /* ObjC.swift */; };
 		7F7FCF7321AE959400C4B1FF /* TestExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7FCF6921AE959400C4B1FF /* TestExtensions.framework */; };
 		7F7FCF7821AE959400C4B1FF /* XCTestCaseExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FCF7721AE959400C4B1FF /* XCTestCaseExtensionsTests.swift */; };
 		7F7FCF7A21AE959400C4B1FF /* TestExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F7FCF6C21AE959400C4B1FF /* TestExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -15,6 +16,10 @@
 		7F7FCFB421AEAD0000C4B1FF /* XCTestCaseExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FCF7721AE959400C4B1FF /* XCTestCaseExtensionsTests.swift */; };
 		7F7FCFBA21AEAD9800C4B1FF /* TestExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7FCF6921AE959400C4B1FF /* TestExtensions.framework */; };
 		7F7FCFBB21AEAD9E00C4B1FF /* TestExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F7FCF6921AE959400C4B1FF /* TestExtensions.framework */; };
+		7FEB6BF524BDD00200C64342 /* DispatchQueueExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEB6BF424BDD00200C64342 /* DispatchQueueExtensions.swift */; };
+		7FEB6BF724BDD08F00C64342 /* ObjCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEB6BF624BDD08F00C64342 /* ObjCTests.swift */; };
+		7FEB6BF824BDD08F00C64342 /* ObjCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEB6BF624BDD08F00C64342 /* ObjCTests.swift */; };
+		7FEB6BF924BDD08F00C64342 /* ObjCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEB6BF624BDD08F00C64342 /* ObjCTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F0F97A824B8E16F007FE1BA /* ObjC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjC.swift; sourceTree = "<group>"; };
 		7F7FCF6921AE959400C4B1FF /* TestExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TestExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7FCF6C21AE959400C4B1FF /* TestExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestExtensions.h; sourceTree = "<group>"; };
 		7F7FCF6D21AE959400C4B1FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +60,8 @@
 		7F7FCFAB21AEACD300C4B1FF /* TestsExtensionsTests-tvOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TestsExtensionsTests-tvOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7FCFAF21AEACD300C4B1FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F8FA6E821AEC98A00A93E97 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7FEB6BF424BDD00200C64342 /* DispatchQueueExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtensions.swift; sourceTree = "<group>"; };
+		7FEB6BF624BDD08F00C64342 /* ObjCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjCTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,8 @@
 			children = (
 				7F7FCF6C21AE959400C4B1FF /* TestExtensions.h */,
 				7F7FCF8321AE95A700C4B1FF /* XCTestCaseExtensions.swift */,
+				7FEB6BF424BDD00200C64342 /* DispatchQueueExtensions.swift */,
+				7F0F97A824B8E16F007FE1BA /* ObjC.swift */,
 				7F7FCF6D21AE959400C4B1FF /* Info.plist */,
 			);
 			path = TestExtensions;
@@ -138,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				7F7FCF7721AE959400C4B1FF /* XCTestCaseExtensionsTests.swift */,
+				7FEB6BF624BDD08F00C64342 /* ObjCTests.swift */,
 			);
 			path = TestExtensionsTests;
 			sourceTree = "<group>";
@@ -183,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F7FCF7D21AE959400C4B1FF /* Build configuration list for PBXNativeTarget "TestExtensions" */;
 			buildPhases = (
+				7FEB6BFA24BDD51800C64342 /* ShellScript */,
 				7F7FCF6421AE959400C4B1FF /* Headers */,
 				7F7FCF6521AE959400C4B1FF /* Sources */,
 				7F7FCF6621AE959400C4B1FF /* Frameworks */,
@@ -328,12 +340,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7FEB6BFA24BDD51800C64342 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"${TRAVIS}\" = \"1\" ]; then\nexit 0\nfi\nif which swiftlint >/dev/null; then\n    swiftlint autocorrect --config \".swiftlint.auto.yml\" && swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7F7FCF6521AE959400C4B1FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FEB6BF524BDD00200C64342 /* DispatchQueueExtensions.swift in Sources */,
 				7F7FCF8421AE95A700C4B1FF /* XCTestCaseExtensions.swift in Sources */,
+				7F0F97A924B8E16F007FE1BA /* ObjC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F7FCF7821AE959400C4B1FF /* XCTestCaseExtensionsTests.swift in Sources */,
+				7FEB6BF724BDD08F00C64342 /* ObjCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F7FCFB321AEACFF00C4B1FF /* XCTestCaseExtensionsTests.swift in Sources */,
+				7FEB6BF824BDD08F00C64342 /* ObjCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F7FCFB421AEAD0000C4B1FF /* XCTestCaseExtensionsTests.swift in Sources */,
+				7FEB6BF924BDD08F00C64342 /* ObjCTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
